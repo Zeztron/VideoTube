@@ -7,6 +7,10 @@ body {
     /* font-size: 10px; */
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 /* ========================================================================== */
 /* Page Container */
 /* ========================================================================== */
@@ -35,12 +39,17 @@ body {
     align-items: center;
 }
 
-#mastHeadContainer button {
+#mastHeadContainer button,
+#mastHeadContainer .rightIcons img {
     cursor: pointer;
     width: 40px;
     height: 40px;
     border: none;
     background-color: transparent;
+}
+
+#mastHeadContainer .rightIcons {
+    height: 100%;
 }
 
 #mastHeadContainer button:focus {
