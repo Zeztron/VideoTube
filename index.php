@@ -17,6 +17,19 @@
             <a class="logoContainer" href="index.php">
                 <img src="assets/images/icons/VideoTubeLogo.png" alt="Logo">
             </a>
+            <div class="searchBarContainer">
+                <form action="search.php" method="GET">
+                    <input type="text" class="searchBar" name="term" placeholder="Search">
+                    <button class="searchButton">
+                        <img src="assets/images/icons/search.png" alt="Search">
+                    </button>
+                </form>
+            </div>
+            <div class="rightIcons">
+                <a href="upload.php">
+                    <img src="assets/images/icons/upload.png" alt="Upload" class="upload">
+                </a>
+            </div>
         </div>
         <div id="sideNavContainer" style="display: none;">
 
