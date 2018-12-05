@@ -14,6 +14,9 @@
             <button class="navShowHide">
                 <img src="assets/images/icons/menu.png" alt="Menu Icon">
             </button>
+            <a class="logoContainer" href="index.php">
+                <img src="assets/images/icons/VideoTubeLogo.png" alt="Logo">
+            </a>
         </div>
         <div id="sideNavContainer" style="display: none;">
 
