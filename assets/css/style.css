@@ -150,6 +150,7 @@ a:hover {
     flex: 1;
 }
 
+/* Upload Column */
 #mainContentContainer .column {
     flex: 1;
     background-color: #fff;
