@@ -37,3 +37,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+#mainSectionContainer {
+    padding-top: 56px;
+    display: flex;
+}
+
+#mainContentContainer {
+    padding: 1rem 3rem;
+}

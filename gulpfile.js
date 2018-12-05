@@ -23,4 +23,5 @@ gulp.task("browserSync", ['php'], () => {
 gulp.task("watch", ['browserSync'], () => {
     gulp.watch("./*.php", browerSync.reload);
     gulp.watch("./assets/css/*.css", browerSync.reload);
+    gulp.watch("./assets/**/*.js", browerSync.reload);
 });
