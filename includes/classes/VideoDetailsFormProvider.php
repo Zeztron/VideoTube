@@ -54,11 +54,21 @@
             // Get the categories from the database
             $query = $this->con->prepare("SELECT * FROM categories");
             $query->execute();
+
+            $html = "<div class='form-group'>
+                        <select class='form-control' name='categoryInput'>";
             
             // Looping through the data
             while($row = $query->fetch(PDO::FETCH_ASSOC)) {
-                echo $row["name"] . "<br>";
+                $id = $row["id"];
+                $name = $row["name"];
+                $html.= "<option value='$id'>$name</option>";
             }
+
+            $html.= "</select>
+                    </div>";
+            
+            return $html;
         }
 
     }
