@@ -20,6 +20,19 @@
 
             $isValidData = $this->processData($videoData, $tempFilePath);
 
+            if(!$isValidSize) {
+                return false;
+            }
+
+            if(move_uploaded_file($videoData["tmp_name"], $tempFilePath)) {
+                $finalFilePath = $targetDir . uniqid() . ".mp4";
+
+                if(!this->insertVideoData($videoUploadData, $finalFilePath) {
+                    echo "Insert query failed";
+                    return false;
+                }
+            }
+
         }
 
         private function processData($videoData, $filePath) {
@@ -33,6 +46,12 @@
                 echo "Invalid file type";
                 return false;
             }
+            else if($this->hasError($videoData)) {
+                echo "Error code: " . $videoData["error"];
+                return false;
+            }
+
+            return true;
         }
 
         private function isValidSize($data) {
@@ -42,6 +61,10 @@
         private function isValidType($type) {
             $lowercased = strtolower($type);
             return in_array($lowercased, $this->allowedTypes);
+        }
+
+        private function hasError($data) {
+            return $data["error"] != 0;
         }
     }
 ?>
