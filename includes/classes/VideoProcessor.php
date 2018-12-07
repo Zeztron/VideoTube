@@ -25,14 +25,14 @@
             }
 
             if(move_uploaded_file($videoData["tmp_name"], $tempFilePath)) {
+
                 $finalFilePath = $targetDir . uniqid() . ".mp4";
 
-                if(!this->insertVideoData($videoUploadData, $finalFilePath) {
+                if(!$this->insertVideoData($videoUploadData, $finalFilePath)) {
                     echo "Insert query failed";
                     return false;
                 }
             }
-
         }
 
         private function processData($videoData, $filePath) {
