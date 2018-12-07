@@ -66,5 +66,19 @@
         private function hasError($data) {
             return $data["error"] != 0;
         }
+
+        private function insertVideoData($uploadData, $filePath) {
+            $query = $this->con->prepare("INSERT INTO videos(title, uploadedBy, description, privacy, category, filePath)
+                                            VALUES(:title, :uploadedBy, :description, :privacy, :category, :filePath)");
+            
+            $query->bindParam(":title", $uploadData->title);
+            $query->bindParam(":uploadedBy", $uploadData->uploadedBy);
+            $query->bindParam(":description", $uploadData->description);
+            $query->bindParam(":privacy", $uploadData->privacy);
+            $query->bindParam(":category", $uploadData->category);
+            $query->bindParam(":filePath", $filePath);
+
+            return $query->execute();
+        }
     }
 ?>
